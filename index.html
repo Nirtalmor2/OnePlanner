@@ -6,9 +6,24 @@
 <title>Niro - LandingPage</title>
 <meta name="description" content="Niro בונה מערכות CRM וניהול עסק בהתאמה אישית לעסקים קטנים ועצמאים: לקוחות, פרויקטים, תשלומים ודוחות — במקום אחד.">
 <meta name="theme-color" content="#0b0907">
+<link rel="canonical" href="https://oneplanner-niro.vercel.app/">
+<!-- Link previews (WhatsApp, Facebook, LinkedIn, X). og:image must be an absolute URL. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Niro">
+<meta property="og:locale" content="he_IL">
+<meta property="og:url" content="https://oneplanner-niro.vercel.app/">
 <meta property="og:title" content="Niro — כל העסק שלך. במקום אחד.">
-<meta property="og:description" content="מערכת CRM שנבנית סביב הדרך שבה אתם עובדים.">
-<meta property="og:image" content="assets/promo-poster-open.jpg">
+<meta property="og:description" content="מערכת CRM שנבנית סביב הדרך שבה אתם עובדים: לקוחות, פרויקטים, תשלומים ודוחות.">
+<meta property="og:image" content="https://oneplanner-niro.vercel.app/assets/og-image.jpg">
+<meta property="og:image:secure_url" content="https://oneplanner-niro.vercel.app/assets/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Niro — כל העסק שלך. במקום אחד.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Niro — כל העסק שלך. במקום אחד.">
+<meta name="twitter:description" content="מערכת CRM שנבנית סביב הדרך שבה אתם עובדים: לקוחות, פרויקטים, תשלומים ודוחות.">
+<meta name="twitter:image" content="https://oneplanner-niro.vercel.app/assets/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500&family=Heebo:wght@300;400;500;700;800&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
@@ -1371,7 +1386,8 @@ void main(){
     .to(heroPortal.state, { open: 1, duration: 3.2, ease: 'expo.out' }, '<')
     .to('.hero .line-mask > span, .hero .line-mask b > span', { yPercent: 0, duration: 1.4, stagger: .12 }, '<+.35')
     .to('.hero-in', { opacity: 1, y: 0, duration: 1.2, stagger: .1 }, '<+.4')
-    .to('.nav-bar', { opacity: 1, y: 0, duration: 1 }, '<+.2');
+    .to('.nav-bar', { opacity: 1, y: 0, duration: 1 }, '<+.2')
+    .add(() => document.querySelectorAll('.hero .line-mask').forEach(m => m.style.overflow = 'visible')); // unclip so the text-shadow isn't boxed
 
   /* ---------- hero: fly into the portal ---------- */
   gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } })
