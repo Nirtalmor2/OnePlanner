@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Niro - LandingPage</title>
-<meta name="description" content="Niro בונה מערכות CRM וניהול עסק בהתאמה אישית לעסקים קטנים ועצמאים: לקוחות, פרויקטים, תשלומים ודוחות — במקום אחד.">
+<meta name="description" content="Niro בונה מערכות CRM וניהול עסק בהתאמה אישית לעסקים קטנים ועצמאים: לקוחות, פרויקטים, תשלומים ודוחות - במקום אחד.">
 <meta name="theme-color" content="#0b0907">
 <link rel="canonical" href="https://oneplanner-niro.vercel.app/">
 <!-- Link previews (WhatsApp, Facebook, LinkedIn, X). og:image must be an absolute URL. -->
@@ -12,16 +12,16 @@
 <meta property="og:site_name" content="Niro">
 <meta property="og:locale" content="he_IL">
 <meta property="og:url" content="https://oneplanner-niro.vercel.app/">
-<meta property="og:title" content="Niro — כל העסק שלך. במקום אחד.">
+<meta property="og:title" content="Niro - כל העסק שלך. במקום אחד.">
 <meta property="og:description" content="מערכת CRM שנבנית סביב הדרך שבה אתם עובדים: לקוחות, פרויקטים, תשלומים ודוחות.">
 <meta property="og:image" content="https://oneplanner-niro.vercel.app/assets/og-image.jpg">
 <meta property="og:image:secure_url" content="https://oneplanner-niro.vercel.app/assets/og-image.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Niro — כל העסק שלך. במקום אחד.">
+<meta property="og:image:alt" content="Niro - כל העסק שלך. במקום אחד.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Niro — כל העסק שלך. במקום אחד.">
+<meta name="twitter:title" content="Niro - כל העסק שלך. במקום אחד.">
 <meta name="twitter:description" content="מערכת CRM שנבנית סביב הדרך שבה אתם עובדים: לקוחות, פרויקטים, תשלומים ודוחות.">
 <meta name="twitter:image" content="https://oneplanner-niro.vercel.app/assets/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -188,6 +188,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .btn-demo-xl .demo-label b{font-size:1.3rem}
 .btn-demo-xl .demo-label small{font-size:.8rem}
 .btn-demo-xl .demo-live{width:10px;height:10px}
+/* the demo CTA closes the showcase, so the section needs only a short tail before "יכולות" */
+#system{padding-bottom:clamp(24px,3vw,40px)}
 .system-demo{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:clamp(48px,7vw,80px);text-align:center}
 .system-demo p{color:var(--ink-2);font-size:1.05rem}
 
@@ -360,7 +362,7 @@ section{position:relative}
 .film-meta span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold)}
 
 /* ============================================================
-   WHY NIRO — chaos → order (pinned story)
+   WHY NIRO - chaos → order (pinned story)
    ============================================================ */
 .why{position:relative}
 .why-pin{
@@ -710,7 +712,7 @@ section{position:relative}
 <!-- NAV -->
 <header class="nav" id="nav">
   <nav class="nav-bar" aria-label="ניווט ראשי">
-    <a class="brand" href="#top" aria-label="Niro — חזרה לראש העמוד">
+    <a class="brand" href="#top" aria-label="Niro - חזרה לראש העמוד">
       <span translate="no">NIRO</span>
     </a>
     <ul class="nav-links">
@@ -784,7 +786,7 @@ section{position:relative}
         <span class="eyebrow" data-reveal>הסרט</span>
         <h2 class="display h2" id="film-title" data-reveal>ראו את זה <b>עובד באמת.</b></h2>
       </div>
-      <p class="lede" data-reveal>32 שניות מתוך מערכת שפועלת היום בסטודיו צילום: לוח בקרה, פרויקטים, תשלומים, לקוחות ודוחות. בלי הדמיות — המסכים האמיתיים.</p>
+      <p class="lede" data-reveal>32 שניות מתוך מערכת שפועלת היום בסטודיו צילום: לוח בקרה, פרויקטים, תשלומים, לקוחות ודוחות. בלי הדמיות - המסכים האמיתיים.</p>
     </div>
 
     <div class="film-frame" id="filmFrame">
@@ -836,8 +838,8 @@ section{position:relative}
         <div class="xls-grid">
           <span class="h">שם</span><span class="h">טלפון</span><span class="h">צילום</span><span class="h">שולם</span>
           <span>יעל פ.</span><span>050-57…</span><span>12.10</span><span class="bad">??</span>
-          <span>דנה כ.</span><span>—</span><span>אוקט׳?</span><span>כן</span>
-          <span>גל פרץ</span><span>054-82…</span><span>—</span><span class="bad">לבדוק</span>
+          <span>דנה כ.</span><span>-</span><span>אוקט׳?</span><span>כן</span>
+          <span>גל פרץ</span><span>054-82…</span><span>-</span><span class="bad">לבדוק</span>
         </div>
       </div></div>
 
@@ -968,7 +970,7 @@ section{position:relative}
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M8 14h3M8 17h6"/></svg></div>
         <div class="cell-body">
           <h3>דדליינים שמחשבים את עצמם</h3>
-          <p>מזינים תאריך אחד, והמערכת מחשבת את מועד המסירה לפי ימי עסקים — כולל סופי שבוע וחגים.</p>
+          <p>מזינים תאריך אחד, והמערכת מחשבת את מועד המסירה לפי ימי עסקים - כולל סופי שבוע וחגים.</p>
           <div class="tl" aria-hidden="true">
             <div class="tl-track"></div><div class="tl-fill" id="tlFill"></div>
             <div class="tl-days">
@@ -990,7 +992,7 @@ section{position:relative}
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6.5 15h3"/></svg></div>
         <div class="cell-body">
           <h3>כסף תחת שליטה</h3>
-          <p>מחיר, תוספות, תשלומים ויתרה — הכל מתעדכן לבד.</p>
+          <p>מחיר, תוספות, תשלומים ויתרה - הכל מתעדכן לבד.</p>
           <div class="money" aria-hidden="true">
             <div class="money-row"><span>מחיר עסקה</span><b>₪ 3,600</b></div>
             <div class="money-row"><span>תוספות</span><b>₪ 500</b></div>
@@ -1031,7 +1033,7 @@ section{position:relative}
       <article class="cell c-f" data-reveal>
         <div class="big-glyph" aria-hidden="true">א׳ב׳</div>
         <h3>עברית מלאה, מימין לשמאל</h3>
-        <p>לא תרגום של מערכת זרה. נבנתה מהיסוד בעברית — ממשק, תאריכים, חגים ושקלים.</p>
+        <p>לא תרגום של מערכת זרה. נבנתה מהיסוד בעברית - ממשק, תאריכים, חגים ושקלים.</p>
       </article>
 
       <article class="cell c-g" data-reveal>
@@ -1071,7 +1073,7 @@ section{position:relative}
     <div class="sec-head">
       <span class="eyebrow" data-reveal>תהליך</span>
       <h2 class="display h2" id="process-title" data-reveal>משיחה אחת <b>למערכת שלכם.</b></h2>
-      <p class="lede" data-reveal>בלי התאמות כפויות למערכת מדף. אנחנו לומדים את העסק, ובונים סביבו.</p>
+      <p class="lede" data-reveal>בלי התאמות כפויות למערכת מדף. אני לומד את העסק, ובונה סביבו.</p>
     </div>
     <div class="proc-wrap" id="procList" style="position:relative">
     <div class="proc-line" aria-hidden="true"><i id="procLine"></i></div>
@@ -1080,21 +1082,21 @@ section{position:relative}
         <span class="proc-dot">01</span>
         <div>
           <h3>שיחת היכרות</h3>
-          <p>מבינים איך העסק עובד היום, מה גוזל לכם הכי הרבה זמן, ומה הייתם רוצים לראות מול העיניים כל בוקר.</p>
+          <p>אני לומד איך העסק עובד היום, מה גוזל לכם הכי הרבה זמן, ומה הייתם רוצים לראות מול העיניים כל בוקר.</p>
         </div>
       </li>
       <li class="proc">
         <span class="proc-dot">02</span>
         <div>
           <h3>אפיון ובנייה</h3>
-          <p>מאפיינים את המסכים, השדות והתהליכים לפי העסק שלכם — ומראים לכם את המערכת כבר בשלבים הראשונים.</p>
+          <p>אני מאפיין את המסכים, השדות והתהליכים לפי העסק שלכם - ומראה לכם את המערכת כבר בשלבים הראשונים.</p>
         </div>
       </li>
       <li class="proc">
         <span class="proc-dot">03</span>
         <div>
           <h3>עלייה לאוויר וליווי</h3>
-          <p>מעלים את המערכת, מדריכים אתכם, ונשארים זמינים להתאמות ושיפורים ככל שהעסק גדל.</p>
+          <p>אני מעלה את המערכת, מדריך אתכם, ונשאר זמין להתאמות ושיפורים ככל שהעסק גדל.</p>
         </div>
       </li>
     </ol>
@@ -1128,7 +1130,7 @@ section{position:relative}
       </details>
       <details>
         <summary>אפשר להוסיף יכולות בהמשך?<span class="plus" aria-hidden="true"></span></summary>
-        <div class="ans">בהחלט. המערכת גדלה יחד עם העסק — מוסיפים מסכים, דוחות ואוטומציות כשצריך.</div>
+        <div class="ans">בהחלט. המערכת גדלה יחד עם העסק - אני מוסיף מסכים, דוחות ואוטומציות כשצריך.</div>
       </details>
     </div>
   </div>
@@ -1141,7 +1143,7 @@ section{position:relative}
   <div class="final-inner">
     <span class="eyebrow" data-reveal style="margin-bottom:30px">צרו קשר</span>
     <h2 class="display" id="contact-title" data-reveal>בואו נבנה <b>את המערכת שלכם.</b></h2>
-    <p class="lede" data-reveal>שיחה קצרה, בלי התחייבות. ספרו לנו איך העסק עובד היום — ונראה לכם איך הוא יכול לעבוד מחר.</p>
+    <p class="lede" data-reveal>שיחה קצרה, בלי התחייבות. ספרו לי איך העסק עובד היום - ואראה לכם איך הוא יכול לעבוד מחר.</p>
     <div class="contact-ways" data-reveal>
       <a class="btn btn-gold magnetic" data-contact="phone" href="#">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.3a11 11 0 0 0 5.3 5.3l1.3-2.1 4.2 1.6V17a2.5 2.5 0 0 1-2.5 2.5A15 15 0 0 1 2.5 6 2.5 2.5 0 0 1 5 3.5z"/></svg>
@@ -1175,13 +1177,13 @@ section{position:relative}
 
 <script>
 /* ============================================================
-   CONTACT DETAILS — replace these placeholders with your real details
+   CONTACT DETAILS - replace these placeholders with your real details
    ============================================================ */
 const CONTACT = {
   phoneDisplay: '050-000-0000',
   phoneE164:    '+972500000000',
   email:        'hello@your-domain.co.il',
-  emailSubject: 'פנייה מהאתר — מערכת ניהול לעסק'
+  emailSubject: 'פנייה מהאתר - מערכת ניהול לעסק'
 };
 
 (() => {
@@ -1198,7 +1200,7 @@ const CONTACT = {
   document.querySelectorAll('[data-contact-text="email"]').forEach(el => el.textContent = CONTACT.email);
 
   /* ============================================================
-     GOLDEN PORTAL — WebGL shader
+     GOLDEN PORTAL - WebGL shader
      ============================================================ */
   const FRAG = `
 precision highp float;
