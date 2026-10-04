@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Niro - LandingPage</title>
+<title>Niro - מערכת CRM וניהול עסק בהתאמה אישית</title>
 <meta name="description" content="Niro בונה מערכות CRM וניהול עסק בהתאמה אישית לעסקים קטנים ועצמאים: לקוחות, פרויקטים, תשלומים ודוחות - במקום אחד.">
 <meta name="theme-color" content="#0b0907">
 <link rel="canonical" href="https://oneplanner-niro.vercel.app/">
@@ -659,13 +659,48 @@ section{position:relative}
   background:radial-gradient(ellipse 40% 36% at 50% 50%, rgba(8,5,3,.55), transparent 70%),
              linear-gradient(to bottom, var(--bg) 0%, transparent 22%, transparent 78%, var(--bg) 100%);
 }
+.final-bg{position:absolute;inset:0;z-index:-2;overflow:hidden;
+  background:radial-gradient(ellipse 30% 45% at 50% 42%, rgba(224,176,96,.22), transparent 70%), var(--bg)}
+.final-video{width:100%;height:100%;object-fit:cover;object-position:50% 75%;transform:scale(1.04);
+  filter:sepia(.85) saturate(1.9) hue-rotate(-10deg) brightness(.82) contrast(1.08);
+  transition:transform 6s var(--ease-out)}
+.final-video.is-on{transform:scale(1)}
 .final-inner{padding:120px var(--gutter);display:flex;flex-direction:column;align-items:center;max-width:900px}
 .final h2{font-size:clamp(2.8rem,7vw,6.6rem);text-shadow:0 4px 50px rgba(0,0,0,.6)}
 .final .lede{margin:26px auto 0;text-align:center;color:#e3d6c2;text-shadow:0 2px 24px rgba(0,0,0,.7)}
-.contact-ways{display:flex;gap:14px;margin-top:44px;flex-wrap:wrap;justify-content:center}
-.contact-ways .btn{min-height:60px;padding:0 34px;font-size:1.05rem}
-.contact-ways .btn bdi{direction:ltr;unicode-bidi:isolate;font-variant-numeric:tabular-nums;letter-spacing:.03em}
-@media (max-width:640px){.contact-ways{flex-direction:column;width:100%;max-width:340px}.contact-ways .btn{width:100%}}
+.contact-ways{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:16px;margin-top:48px;width:min(980px,calc(100vw - 2 * var(--gutter)))}
+.cway{
+  position:relative;display:flex;align-items:center;gap:16px;min-height:88px;padding:18px 22px;border-radius:22px;
+  text-align:right;color:var(--ink);isolation:isolate;
+  background:linear-gradient(160deg,rgba(30,23,16,.94),rgba(12,9,6,.96));
+  border:1px solid rgba(243,217,160,.22);
+  box-shadow:0 0 0 1px rgba(0,0,0,.4), 0 24px 60px -24px rgba(0,0,0,.9), inset 0 1px 0 rgba(255,240,210,.08);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  transition:transform .4s var(--ease-out), border-color .35s, box-shadow .4s var(--ease-out);
+  will-change:transform;touch-action:manipulation;
+}
+@media (hover:hover){.cway:hover{border-color:rgba(243,217,160,.6);box-shadow:0 0 0 1px rgba(0,0,0,.4), 0 30px 70px -22px rgba(0,0,0,.95), 0 0 46px -10px rgba(224,176,96,.45), inset 0 1px 0 rgba(255,240,210,.14)}}
+.cway:active{transform:scale(.98)}
+.cway-ic{flex:none;width:50px;height:50px;border-radius:50%;display:grid;place-items:center;color:var(--gold-2);
+  background:radial-gradient(circle at 30% 25%,rgba(243,217,160,.22),rgba(224,176,96,.06));border:1px solid rgba(243,217,160,.3)}
+.cway-ic svg{width:22px;height:22px}
+.cway-txt{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1}
+.cway-txt small{font-size:.74rem;letter-spacing:.18em;color:var(--gold);font-weight:500}
+.cway-txt b{font-size:1.08rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cway-txt bdi{direction:ltr;unicode-bidi:isolate;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.cway-go{flex:none;width:18px;height:18px;color:var(--ink-3);transition:transform .35s var(--ease-out), color .3s}
+@media (hover:hover){.cway:hover .cway-go{transform:translateX(-4px);color:var(--gold-2)}}
+/* featured: WhatsApp */
+.cway-wa{color:#1a1006;border-color:rgba(255,236,190,.7);
+  background:linear-gradient(135deg,#f8e6b8 0%,#e6b968 48%,#b9843a 100%);
+  box-shadow:0 0 0 1px rgba(0,0,0,.35), 0 24px 60px -18px rgba(224,176,96,.65), inset 0 1px 0 rgba(255,255,255,.5)}
+@media (hover:hover){.cway-wa:hover{border-color:#fff1cf;box-shadow:0 0 0 1px rgba(0,0,0,.35), 0 30px 80px -16px rgba(240,190,100,.9), inset 0 1px 0 rgba(255,255,255,.6)}}
+.cway-wa .cway-ic{color:#fff;background:#1fa855;border:0;box-shadow:0 6px 18px -6px rgba(16,90,45,.8)}
+.cway-wa .cway-txt small{color:#5a3d12}
+.cway-wa .cway-go,.cway-wa:hover .cway-go{color:#3a2709}
+@media (max-width:1099px){.contact-ways{grid-template-columns:1fr;max-width:400px}}
+@media (max-width:420px){.cway-go{display:none}}
+@media (max-width:380px){.cway{padding:16px 16px;gap:12px}.cway-ic{width:44px;height:44px}.cway-txt b{font-size:1rem}}
 
 /* ============================================================
    FOOTER
@@ -694,6 +729,9 @@ section{position:relative}
   .marquee-track{animation:none}
 }
 </style>
+<!-- Vercel Web Analytics: the script route exists only on the deployed site -->
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 
 <body class="is-loading">
@@ -877,8 +915,8 @@ section{position:relative}
           <span class="hub-pill">ממתין לעריכה</span>
         </div>
         <ul class="hub-rows">
-          <li class="hub-row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg></span><span>צילום</span><b>א׳ · 12.10.2026</b></li>
-          <li class="hub-row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span>מסירת גלריה</span><b>01.11 · <em>עוד 34 ימי עסקים</em></b></li>
+          <li class="hub-row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg></span><span>צילום</span><b>ב׳ · 12.10.2026</b></li>
+          <li class="hub-row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span>מסירת גלריה</span><b>א׳ · 01.11 · <em>14 ימי עסקים</em></b></li>
           <li class="hub-row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12.5l5 5L20 6.5"/></svg></span><span>מקדמה</span><b class="ok">₪1,000 · שולם</b></li>
           <li class="hub-row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9a6 6 0 1 1 12 0c0 5 2 6.5 2 6.5H4S6 14 6 9zM10 19a2 2 0 0 0 4 0"/></svg></span><span>תזכורת תשלום</span><b>נשלחה אוטומטית</b></li>
           <li class="hub-row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19"/></svg></span><span>יתרה לתשלום</span><b class="big">₪4,100</b></li>
@@ -974,7 +1012,7 @@ section{position:relative}
           <div class="tl" aria-hidden="true">
             <div class="tl-track"></div><div class="tl-fill" id="tlFill"></div>
             <div class="tl-days">
-              <div class="tl-day mark"><b>צילום</b><span>א׳ 12.10</span></div>
+              <div class="tl-day mark"><b>צילום</b><span>יום א׳</span></div>
               <div class="tl-day"><span>ב׳</span></div>
               <div class="tl-day"><span>ג׳</span></div>
               <div class="tl-day off"><span>חג</span></div>
@@ -982,7 +1020,7 @@ section{position:relative}
               <div class="tl-day off"><span>שישי</span></div>
               <div class="tl-day off"><span>שבת</span></div>
               <div class="tl-day"><span>א׳</span></div>
-              <div class="tl-day mark"><b>מסירה</b><span>ב׳ 01.11</span></div>
+              <div class="tl-day mark"><b>מסירה</b><span>יום ב׳</span></div>
             </div>
           </div>
         </div>
@@ -1138,20 +1176,28 @@ section{position:relative}
 
 <!-- ============ FINAL CTA ============ -->
 <section class="final" id="contact" aria-labelledby="contact-title">
-  <div class="hero-fallback" aria-hidden="true"></div>
-  <canvas class="portal-canvas" id="portalFinal" aria-hidden="true"></canvas>
+  <div class="final-bg" aria-hidden="true">
+    <video class="final-video" id="finalVideo" muted loop playsinline preload="none" poster="assets/contact-bg-poster.jpg" data-src="assets/contact-bg.mp4"></video>
+  </div>
   <div class="final-inner">
     <span class="eyebrow" data-reveal style="margin-bottom:30px">צרו קשר</span>
     <h2 class="display" id="contact-title" data-reveal>בואו נבנה <b>את המערכת שלכם.</b></h2>
     <p class="lede" data-reveal>שיחה קצרה, בלי התחייבות. ספרו לי איך העסק עובד היום - ואראה לכם איך הוא יכול לעבוד מחר.</p>
     <div class="contact-ways" data-reveal>
-      <a class="btn btn-gold magnetic" data-contact="phone" href="#">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.3a11 11 0 0 0 5.3 5.3l1.3-2.1 4.2 1.6V17a2.5 2.5 0 0 1-2.5 2.5A15 15 0 0 1 2.5 6 2.5 2.5 0 0 1 5 3.5z"/></svg>
-        <bdi data-contact-text="phone"></bdi>
+      <a class="cway cway-wa magnetic" data-contact="whatsapp" href="https://wa.me/972546164460" target="_blank" rel="noopener">
+        <span class="cway-ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span>
+        <span class="cway-txt"><small>וואטסאפ</small><b>שלחו הודעה</b></span>
+        <svg class="cway-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
       </a>
-      <a class="btn btn-glass magnetic" data-contact="email" href="#">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M3 6.5l9 6.5 9-6.5"/></svg>
-        <bdi data-contact-text="email"></bdi>
+      <a class="cway magnetic" data-contact="phone" href="tel:+972546164460">
+        <span class="cway-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.3a11 11 0 0 0 5.3 5.3l1.3-2.1 4.2 1.6V17a2.5 2.5 0 0 1-2.5 2.5A15 15 0 0 1 2.5 6 2.5 2.5 0 0 1 5 3.5z"/></svg></span>
+        <span class="cway-txt"><small>טלפון</small><b><bdi data-contact-text="phone">054-6164460</bdi></b></span>
+        <svg class="cway-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+      </a>
+      <a class="cway magnetic" data-contact="email" href="mailto:nirtalmor2@gmail.com">
+        <span class="cway-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M3 6.5l9 6.5 9-6.5"/></svg></span>
+        <span class="cway-txt"><small>מייל</small><b><bdi data-contact-text="email">nirtalmor2@gmail.com</bdi></b></span>
+        <svg class="cway-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
       </a>
     </div>
   </div>
@@ -1182,6 +1228,8 @@ section{position:relative}
 const CONTACT = {
   phoneDisplay: '054-6164460',
   phoneE164:    '+972546164460',
+  whatsapp:     '972546164460',
+  whatsappText: 'היי, הגעתי מהאתר ואשמח לשמוע על מערכת ניהול לעסק שלי',
   email:        'nirtalmor2@gmail.com',
   emailSubject: 'פנייה מהאתר - מערכת ניהול לעסק'
 };
@@ -1195,7 +1243,18 @@ const CONTACT = {
 
   /* ---------- contact wiring ---------- */
   document.querySelectorAll('[data-contact="phone"]').forEach(a => a.href = 'tel:' + CONTACT.phoneE164);
+  document.querySelectorAll('[data-contact="whatsapp"]').forEach(a => a.href = 'https://wa.me/' + CONTACT.whatsapp + '?text=' + encodeURIComponent(CONTACT.whatsappText));
   document.querySelectorAll('[data-contact="email"]').forEach(a => a.href = 'mailto:' + CONTACT.email + '?subject=' + encodeURIComponent(CONTACT.emailSubject));
+  /* analytics: which contact channel / demo button gets clicked */
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a');
+    if (!a) return;
+    if (a.dataset.contact) va('event', { name: 'Contact', data: { channel: a.dataset.contact } });
+    else if (a.href.startsWith('https://oneplanner-demo.vercel.app')) {
+      const where = a.closest('section')?.id || (a.closest('.mobile-menu') ? 'menu' : 'nav');
+      va('event', { name: 'Demo', data: { location: where } });
+    }
+  });
   document.querySelectorAll('[data-contact-text="phone"]').forEach(el => el.textContent = CONTACT.phoneDisplay);
   document.querySelectorAll('[data-contact-text="email"]').forEach(el => el.textContent = CONTACT.email);
 
@@ -1325,7 +1384,19 @@ void main(){
   }
 
   const heroPortal = new Portal(document.getElementById('portalHero'), { open: (hasGSAP && !reduceMotion) ? 0 : 1 });
-  const finalPortal = new Portal(document.getElementById('portalFinal'), { open: 1, timeOffset: 40000 });
+  /* contact background video: load only when the section comes near */
+  const finalVideo = document.getElementById('finalVideo');
+  if (finalVideo && !reduceMotion && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting) { if (finalVideo.src) finalVideo.pause(); return; }
+      if (!finalVideo.src) {
+        finalVideo.src = finalVideo.dataset.src;
+        finalVideo.addEventListener('playing', () => finalVideo.classList.add('is-on'), { once: true });
+      }
+      finalVideo.play().catch(() => {});
+    }, { rootMargin: '300px 0px' });
+    io.observe(finalVideo);
+  }
   if (reduceMotion) { heroPortal.gl && heroPortal.draw(); }
 
   if (finePointer && !reduceMotion) {
@@ -1335,7 +1406,6 @@ void main(){
       tx = e.clientX; ty = e.clientY; document.body.classList.add('cursor-on');
       const nx = (e.clientX / innerWidth - .5), ny = -(e.clientY / innerHeight - .5);
       heroPortal.setMouse && heroPortal.setMouse(nx, ny);
-      finalPortal.setMouse && finalPortal.setMouse(nx, ny);
     }, { passive: true });
     (function loop(){ lx += (tx - lx) * .12; ly += (ty - ly) * .12; light.style.transform = `translate3d(${lx}px,${ly}px,0)`; requestAnimationFrame(loop); })();
   }
@@ -1520,9 +1590,6 @@ void main(){
   gsap.fromTo('.stage .device', { rotateX: 8, y: 40 }, { rotateX: 0, y: 0, ease: 'none', transformPerspective: 1400,
     scrollTrigger: { trigger: '#system', start: 'top 90%', end: 'top 20%', scrub: true } });
 
-  /* ---------- final portal breathes in ---------- */
-  finalPortal.state && (finalPortal.state.open = 0.6);
-  finalPortal.state && gsap.to(finalPortal.state, { open: 1, ease: 'none', scrollTrigger: { trigger: '#contact', start: 'top bottom', end: 'center center', scrub: true } });
 
   /* ---------- magnetic buttons ---------- */
   if (finePointer) document.querySelectorAll('.magnetic').forEach(btn => {
